@@ -3,25 +3,53 @@ title: "Black Mirror"
 author: "Damian Ślusarczyk"
 format: html
 editor: visual
+toc: true
+toc-depth: 2
+title-block-banner: black
+execute:
+  echo: false
+  output: false
 ---
 
-## Quarto
+## Introduction
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Exploring the unsettling aspects of contemporary society, the anthology series *Black Mirror* has captured global attention with its thought-provoking narratives and dystopian scenarios. Created by Charlie Brooker, each episode presents a **self-contained story** that delves into the repercussions of technological advancements and human behavior. This report investigates the IMDb ratings of *Black Mirror* episodes, analyzing both audience feedback and critical reception to uncover the standout installments and overarching themes that have contributed to the series' enduring impact in the speculative fiction genre.  
 
-## Running Code
+![](collage.jpg)
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## General ratings
 
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
+Firstly, let's have a look at the heatmap of IMDb users' episode ratings.
 
 ```{r}
-#| echo: false
-2 * 2
+ratings <- read.csv2("data.csv")
+head(ratings)
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+library(tidyr)
+library(ggplot2)
+library(plotly)
+```
+
+```{r}
+ratings_matrix <- pivot_wider(ratings[,-4], names_from = Season, values_from = Rating)
+```
+
+```{r}
+#| output: true
+
+ggplot(ratings, aes(Episode, Season, fill=Rating)) +
+  geom_tile() +
+  geom_text(aes(label = Rating), color = "white", fontface = "bold") +
+  scale_fill_gradientn(limits = c(-0,10),
+  colours=c("#D2222D", "#FFBF00", "#007000")) +
+  theme(panel.grid = element_blank(),
+        axis.ticks = element_blank(),
+        panel.background = element_rect(fill = "white")) +
+  scale_x_continuous(breaks = seq(min(ratings$Episode), max(ratings$Episode), by = 1)) +
+  scale_y_continuous(breaks = seq(min(ratings$Season), max(ratings$Season), by = 1)) 
+  
+```
+
+We can see that overall the episodes are rated relatively high by the viewers, although there are some exceptions. The mean rating is **`r round(mean(ratings$Rating), digits=2)`**. The highest rated episode is *`r ratings$Name[which.max(ratings$Rating)]`* (season `r ratings$Season[which.max(ratings$Rating)]` episode `r ratings$Episode[which.max(ratings$Rating)]`). The lowest rated episode is *`r ratings$Name[which.min(ratings$Rating)]`* (season `r ratings$Season[which.min(ratings$Rating)]` episode `r ratings$Episode[which.min(ratings$Rating)]`)
