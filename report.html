@@ -36,8 +36,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>
 
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
       .quarto-title-block .quarto-title-banner {
-        background: black;
+        color: white;
+background: black;
       }
 </style>
 
@@ -74,8 +85,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#general-ratings" id="toc-general-ratings" class="nav-link" data-scroll-target="#general-ratings">General ratings</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#general-ratings" id="toc-general-ratings" class="nav-link" data-scroll-target="#general-ratings"><span class="header-section-number">2</span> General ratings</a>
+  <ul class="collapse">
+  <li><a href="#the-highest-rated-episode" id="toc-the-highest-rated-episode" class="nav-link" data-scroll-target="#the-highest-rated-episode"><span class="header-section-number">2.1</span> The highest rated episode</a></li>
+  <li><a href="#the-lowest-rated-episode" id="toc-the-lowest-rated-episode" class="nav-link" data-scroll-target="#the-lowest-rated-episode"><span class="header-section-number">2.2</span> The lowest rated episode</a></li>
+  </ul></li>
+  <li><a href="#season-ratings" id="toc-season-ratings" class="nav-link" data-scroll-target="#season-ratings"><span class="header-section-number">3</span> Season ratings</a></li>
+  <li><a href="#recommended-episodes" id="toc-recommended-episodes" class="nav-link" data-scroll-target="#recommended-episodes"><span class="header-section-number">4</span> Recommended episodes</a></li>
   </ul>
 </nav>
 </div>
@@ -84,20 +101,159 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>Exploring the unsettling aspects of contemporary society, the anthology series <em>Black Mirror</em> has captured global attention with its thought-provoking narratives and dystopian scenarios. Created by Charlie Brooker, each episode presents a <strong>self-contained story</strong> that delves into the repercussions of technological advancements and human behavior. This report investigates the IMDb ratings of <em>Black Mirror</em> episodes, analyzing both audience feedback and critical reception to uncover the standout installments and overarching themes that have contributed to the series’ enduring impact in the speculative fiction genre.</p>
 <p><img src="collage.jpg" class="img-fluid"></p>
 </section>
-<section id="general-ratings" class="level2">
-<h2 class="anchored" data-anchor-id="general-ratings">General ratings</h2>
+<section id="general-ratings" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> General ratings</h1>
 <p>Firstly, let’s have a look at the heatmap of IMDb users’ episode ratings.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="report_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>We can see that overall the episodes are rated relatively high by the viewers, although there are some exceptions. The mean rating is <strong>7.64</strong>. The highest rated episode is <em>White Christmas</em> (season 2 episode 4). The lowest rated episode is <em>Mazey Day</em> (season 6 episode 4)</p>
+<p>We can see that overall the episodes are rated relatively high by the viewers, although there are some exceptions. The mean rating is <strong>7.64</strong>.</p>
+<section id="the-highest-rated-episode" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-highest-rated-episode"><span class="header-section-number">2.1</span> The highest rated episode</h2>
+<p>The highest rated episode is <em>White Christmas</em> (season 2 episode 4) with rating <strong>9.1</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://pyxis.nymag.com/v1/imgs/62c/5cc/a5e6e63a08515bfbcbe02ecd6dca9ffd35-22-black-mirror-white-christms.2x.rsocial.w600.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">White Christmas</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-lowest-rated-episode" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-lowest-rated-episode"><span class="header-section-number">2.2</span> The lowest rated episode</h2>
+<p>The lowest rated episode is <em>Mazey Day</em> (season 6 episode 4) with rating <strong>5.3</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cdn.vox-cdn.com/thumbor/tX-uzM2CzQw4L9q6rGG2a7-Bbd8=/0x0:3840x1920/2000x1333/filters:focal(1920x960:1921x961)/cdn.vox-cdn.com/uploads/chorus_asset/file/24732122/Black_Mirror_n_S6_E4_00_17_59_07.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Mazey Day</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="season-ratings" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Season ratings</h1>
+<p>Now let’s look at the rating per each season.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We can see that the rating of episodes are decreasing. The sharpest decrease can be observed *between seasons 4 and 5** (on average the ratings descreased by 1)</p>
+</section>
+<section id="recommended-episodes" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Recommended episodes</h1>
+<p>Because each <em>Black Mirror</em> episode contains self contained story, one can choose which episodes to watch and which to skip. Below, there is a list of top 5 episodes by IMDb users’ rating.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Season</th>
+<th style="text-align: center;">Episode</th>
+<th style="text-align: center;">Rating</th>
+<th style="text-align: center;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">9.1</td>
+<td style="text-align: center;">White Christmas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8.7</td>
+<td style="text-align: center;">Hang the DJ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">8.6</td>
+<td style="text-align: center;">Black Museum</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8.5</td>
+<td style="text-align: center;">The Entire History of You</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8.5</td>
+<td style="text-align: center;">San Junipero</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">8.5</td>
+<td style="text-align: center;">Hated in the Nation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>And below, there are 5 worst episodes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Season</th>
+<th style="text-align: center;">Episode</th>
+<th style="text-align: center;">Rating</th>
+<th style="text-align: center;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5.3</td>
+<td style="text-align: center;">Mazey Day</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6.1</td>
+<td style="text-align: center;">Rachel, Jack and Ashley Too</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6.6</td>
+<td style="text-align: center;">The Waldo Moment</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6.6</td>
+<td style="text-align: center;">Metalhead</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6.7</td>
+<td style="text-align: center;">Demon 79</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">6.8</td>
+<td style="text-align: center;">Striking Vipers</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 
 </main>
