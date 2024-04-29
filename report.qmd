@@ -1,10 +1,9 @@
 ---
 title: "Black Mirror"
 author: "Damian Ślusarczyk"
-format: html
+date: 2024-04-29
+date-format: short
 editor: visual
-toc: true
-toc-depth: 2
 title-block-banner: black
 title-block-banner-color: white
 execute:
@@ -12,11 +11,15 @@ execute:
   output: false
 theme: zephyr
 number-sections: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
 ---
 
 # Introduction
 
-Exploring the unsettling aspects of contemporary society, the anthology series *Black Mirror* has captured global attention with its thought-provoking narratives and dystopian scenarios. Created by Charlie Brooker, each episode presents a **self-contained story** that delves into the repercussions of technological advancements and human behavior. This report investigates the IMDb ratings of *Black Mirror* episodes, analyzing both audience feedback and critical reception to uncover the standout installments and overarching themes that have contributed to the series' enduring impact in the speculative fiction genre.  
+Exploring the unsettling aspects of contemporary society, the anthology series *Black Mirror* has captured global attention with its thought-provoking narratives and dystopian scenarios. Created by Charlie Brooker, each episode presents a **self-contained story** that delves into the repercussions of technological advancements and human behavior. This report investigates the IMDb ratings of *Black Mirror* episodes, analyzing audience feedback to uncover the standout installments and overarching themes that have contributed to the series' enduring impact in the speculative fiction genre.  
 
 ![](collage.jpg)
 
@@ -94,23 +97,22 @@ ggplot(season_averages, aes(x = Season, y = avg_rating)) +
   theme_minimal()
 ```
 
-We can see that the rating of episodes are decreasing. The sharpest decrease can be observed *between seasons 4 and 5** (on average the ratings descreased by `r round(season_averages[4,2] - season_averages[5,2], 2)`)
+We can see that the rating of episodes are decreasing. The sharpest decrease can be observed **between seasons 4 and 5** (on average the ratings descreased by **`r round(season_averages[4,2] - season_averages[5,2], 2)`**)
 
-# Recommended episodes
+# Recommended (and less recommended) episodes
 
-Because each *Black Mirror* episode contains self contained story, one can choose which episodes to watch and which to skip. Below, there is a list of top 5 episodes by IMDb users' rating.
-
-```{r}
-#| output: true
-
-ratings[order(ratings$Rating, decreasing=TRUE),] %>% head() %>% kable(row.names = FALSE, align="c")
-```
-
-And below, there are 5 worst episodes.
+Because each *Black Mirror* episode contains self contained story, one can choose which episodes to watch and which to skip. Below, there is a list of **top 5 episodes** by IMDb users' rating.
 
 ```{r}
 #| output: true
 
-ratings[order(ratings$Rating, decreasing=FALSE),] %>% head() %>% kable(row.names = FALSE, align="c")
+ratings[order(ratings$Rating, decreasing=TRUE),] %>% head(5) %>% kable(row.names = FALSE, align="c")
 ```
 
+And below, there are **5 worst episodes**.
+
+```{r}
+#| output: true
+
+ratings[order(ratings$Rating, decreasing=FALSE),] %>% head(5) %>% kable(row.names = FALSE, align="c")
+```
